@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Ratting from '../components/Ratting';
+import { Link } from 'react-router-dom';
 
 const title = "Our Products";
 
@@ -108,9 +110,9 @@ const CategoryShowCase = () => {
 
                 {/* Section Body */}
                 <div className='section-wrapper'>
-                    <div>
+                    <div className='row g-4 justify-content-center row-cols-xl-4 row-cols-lg-3  row-cols-md-2 row-cols-sm-1'>
                         {
-                            items.map((product)=><div key={product.id} className='col'>
+                            items.map((product) => <div key={product.id} className='col'>
                                 <div className='course-item style-4'>
                                     <div className='course-inner'>
                                         <div className='course-thum'>
@@ -119,8 +121,22 @@ const CategoryShowCase = () => {
                                                 <div className='course-cate'>
                                                     <a href="#">{product.cate}</a>
                                                 </div>
-                                                <div className='course-rivew'></div>
+                                                <div className='course-rivew'>
+                                                    <Ratting />
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                        {/* Product Content */}
+                                        <div className="course-content">
+                                            <Link to={`/shop/${product.id}`}><h5>{product.title}</h5></Link>
+                                            <div className='course-footer'>
+                                                <div className='course-author'>
+                                                    <Link to="/" className='ca-name'>{product.brand}</Link>
+                                                </div>
+                                                <div className='course-price'>
+                                                    {product.price}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
