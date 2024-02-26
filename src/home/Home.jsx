@@ -4,6 +4,8 @@ import HomeCategory from './HomeCategory'
 import CategoryShowCase from './CategoryShowCase'
 import Register from './Register'
 import LocationSpred from './LocationSpred'
+import AboutUs from './AboutUs'
+
 
 const Home = () => {
   return (
@@ -13,6 +15,7 @@ const Home = () => {
       <CategoryShowCase/>
       <Register/>
       <LocationSpred/>
+      <AboutUs/>
     </div>
   )
 }
